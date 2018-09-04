@@ -6,11 +6,17 @@ import (
 )
 
 // 검색을 처리할 검색기의 매핑 정보를 저장할 맵(map)
+// make 특수한 내장함수 : 변수를 초기화 할 수 있음
+// go에서는 모든 변수가 제로 값으로 초기화 됨 (포인터의 경우 nil) - 닐이라 읽음
+// 소문자로 시작되면 외부로 노출되지 않는 것 (matchers)
 var matchers = make(map[string]Matcher)
 
 // 검색 로직을 수행할 Run 함수
 func Run(searchTerm string) {
-	// 검색할 피드의 목록을 조회한다.
+	// 검색할 피드의 목록을 조회한다. 두개의 값을 리턴한다.
+	// 첫번째 리턴 값을 Feed 타입 값의 슬라이스
+	// 슬라이스는 동적 배열을 구현한 참조 타입 (Go 에서 테이터 목록을 처리할 때 사용)
+	// 두번째 리턴 값은 에러 
 	feeds, err := RetrieveFeeds()
 	if err != nil {
 		log.Fatal(err)

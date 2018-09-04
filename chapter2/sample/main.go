@@ -8,7 +8,7 @@ package main
 // 폴더 이름과 동일한 패키지 이름을 사용하는 것이 관례다.
 import (
     "fmt"
-    _ "github.com/code-j/go-in-action/chapter2/sample/matchers" // _ 빈 식별자 사용
+    _ "github.com/code-j/go-in-action/chapter2/sample/matchers" // _ 빈 식별자 사용 (사용하지 않아도 에러 안나게)
     "github.com/code-j/go-in-action/chapter2/sample/search"
     "log"
     "os"
