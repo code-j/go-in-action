@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-const dataFile = "data/data.json"
+const dataFile = "c:\\data.json"
 
 // 피드를 처리할 정보를 표현하는 구조체
 type Feed struct {
